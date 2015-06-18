@@ -26,8 +26,8 @@ RUN LIBUV_VERSION=1.4.2 \
 ENV PATH $PATH:$DNX_USER_HOME/runtimes/default/bin 
 
 WORKDIR /app
-# RUN source ~/.dnx/dnvm/dnvm.sh
-#RUN dnvm
-#RUN dnvm update-self;
-# download the NetWebAPITest app
+
+# fetch the NuGet dependencies
+RUN dnu restore
+# install git!
 RUN apt-get -y install git
